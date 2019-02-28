@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #include "command.func.h"
 
@@ -14,7 +16,8 @@
 void Usage();
 void RecDir(char *path, int flag);
 void list_file();
-void vopy_file();
+void copy_file();
+void remove_file (char *file);
 
 /* Allow to tell to the user how the command works and what parameters it should set*/
 /*Add pointer to identify the command and what usage send */
@@ -85,4 +88,30 @@ void copy_file(){
      
        fclose(source);
        fclose(target);
+}
+/*Use open() to create a file and notify the user if the file has been created
+------ADD CONDITION IF THE FILE ALREADY EXIST------
+*/
+void create_file(char *buf){
+	int fd2 = open(buf, O_RDWR | O_CREAT, S_IRUSR | S_IRGRP | S_IROTH);
+	printf(GREEN "Fichier créé\n" RESET_COLOR);
+}
+void create_directory(char *buf){
+	struct stat st = {0};
+
+	if (stat(buf, &st) == -1) {
+	    mkdir(buf, 0700);
+	    printf(GREEN "Directory created\n" RESET_COLOR);
+	}
+}
+void remove_file (char *file) {
+   int ret;
+
+   ret = remove(file);
+
+   if(ret == 0) {
+      printf("File deleted successfully\n");
+   } else {
+      printf("Error: unable to delete the file\n");
+   }
 }

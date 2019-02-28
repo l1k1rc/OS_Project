@@ -44,6 +44,12 @@ void talkWithServer(char buf[DIM], int *con,char *argv[],int argc){
 				copy_file();
 			}else if (!strncmp (buf, "ls", strlen("ls"))) {
 				list_file();
+			}else if (!strncmp (buf, "touch", strlen("touch"))) {
+				create_file("try");
+			}else if (!strncmp (buf, "mkdir", strlen("mkdir"))) {
+				create_directory("rep");
+			}else if (!strncmp (buf, "rm", strlen("mkdir"))) {
+				remove_file ("test");
 			}else {
 			    if(strcmp(buf,"exit") == 0){
 					*con=0;
