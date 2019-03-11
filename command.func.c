@@ -1,3 +1,9 @@
+/*!
+ * @version
+ * @author Saint-Amand Matthieu, Castelain Julien, Hachoud Rassem
+ * @brief ensemble des commandes
+ * @file command.c
+ */
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>

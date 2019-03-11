@@ -1,3 +1,9 @@
+/*!
+ * @version
+ * @author Saint-Amand Matthieu, Castelain Julien, Hachoud Rassem
+ * @brief Interface de commande, noyau moteur.
+ * @file main.c
+ */
 #include <string.h>
 #include <stdio.h>
 
@@ -7,7 +13,10 @@
 #define CYAN "\033[1;36m" // Bold cyan
 void talkWithServer(char buf[DIM], int *con,char *argv[],int argc);
 void vider_stdin(void);
-
+/* Use https://www.codingame.com/playgrounds/14213/how-to-play-with-strings-in-c/string-split to
+ *split a string like an "explode()" in Php, when a string is received, you gotta split the string to 
+ *retrieve the parameter(s) of the command 
+*/
 
 int main (int argc, char *argv[]){
 	char buf [DIM] ;
