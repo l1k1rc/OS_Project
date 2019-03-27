@@ -1,9 +1,4 @@
-/*!
- * @version
- * @author Saint-Amand Matthieu, Castelain Julien, Hachoud Rassem
- * @brief Interface de commande, noyau moteur.
- * @file main.c
- */
+
 #include <string.h>
 #include <stdio.h>
 
