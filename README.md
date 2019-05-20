@@ -1,1 +1,3 @@
-###########
+# Projet Operating System
+Réalisation d'un simulateur de gestion de fichier par l'intermédiaire d'un disque virtuel.
+L'objectif est de simuler des commandes shell simples tels que ls, mkdir, cp ...
